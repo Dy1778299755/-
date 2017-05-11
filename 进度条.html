@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div{
+				height: 30px;
+				border-radius: 8px;
+			}
+			.up {
+				width: 500px;
+				margin:  100px auto;
+				background: #efefef;
+			}
+			.down {
+				background: red;
+				width: 500px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="up">
+			<div class="down"></div>
+		</div>
+		
+		<script>
+			var up = document.getElementsByClassName("up")[0];
+			var down = document.getElementsByClassName('down')[0];
+			console.log(down.offsetWidth);
+			var time = setInterval(function(){
+				down.style.width = down.offsetWidth - 10 + 'px';
+				console.log(down.offsetWidth);
+				if(down.offsetWidth <= 0) {
+					clearInterval(time);
+					document.write('<p> 游戏结束 </p>')
+				}
+			},100);
+
+
+		
+
+		</script>
+	</body>
+</html>
